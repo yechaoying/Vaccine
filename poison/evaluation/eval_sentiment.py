@@ -44,8 +44,9 @@ for data in data_lst:
 for data, pred in zip(data_lst, prediction_lst):
     data["violoate_catogory:" ] = pred
 
-data_lst+= ["final  score:{:.2f}".format(flag/len(data_lst)*100)] 
+
 print("final score:{:.2f}".format(flag/len(data_lst)*100))
+data_lst+= ["final  score:{:.2f}".format(flag/len(data_lst)*100)] 
 print("input path: {}".format(args.input_path))
 with open(f'{args.input_path}_sentiment_eval.json', 'w', encoding='utf-8') as f:
     json.dump(data_lst, f, indent=4)
